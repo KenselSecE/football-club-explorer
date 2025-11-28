@@ -1,0 +1,25 @@
+{
+  "clubs": [
+    {
+      "id": 1,
+      "name": "Manchester City",
+      "league": "Premier League",
+      "country": "England",
+      "founded": 1880
+    },
+    {
+      "id": 2,
+      "name": "Real Madrid",
+      "league": "La Liga",
+      "country": "Spain",
+      "founded": 1902
+    },
+    {
+      "id": 3,
+      "name": "Boca Juniors",
+      "league": "Liga Argentina",
+      "country": "Argentina",
+      "founded": 1905
+    }
+  ]
+}

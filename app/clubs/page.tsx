@@ -1,48 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import ClubList from "../../components/ClubList";
-
-type Club = {
-  id: number;
-  name: string;
-  league: string;
-  country: string;
-  founded: number;
-};
+import { useState, useEffect } from "react";
+import { Club } from "@/types/club";
+import ClubList from "@/components/ClubList";
 
 export default function ClubsPage() {
   const [clubs, setClubs] = useState<Club[]>([]);
-  const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    async function loadData() {
-      const res = await fetch("/data/clubs.json");
-      const data = await res.json();
-      setClubs(data.clubs);
-    }
-    loadData();
+    fetch("/clubs.json") // ← YA NO EXISTE /data/
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data.clubs)) {
+          setClubs(data.clubs);
+        } else {
+          console.error("Invalid JSON:", data);
+        }
+      })
+      .catch((err) => console.error(err));
   }, []);
-
-  const filteredClubs =
-    filter.trim() === ""
-      ? clubs
-      : clubs.filter((c) =>
-          c.league.toLowerCase().includes(filter.toLowerCase())
-        );
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">Clubs</h1>
-
-      <input
-        className="mt-4 p-2 border rounded"
-        placeholder="Filter by league…"
-        onChange={(e) => setFilter(e.target.value)}
-      />
-
-      <ClubList clubs={filteredClubs} /> 
-      
+      <h1>Clubs</h1>
+      <ClubList clubs={clubs} />
     </div>
   );
 }

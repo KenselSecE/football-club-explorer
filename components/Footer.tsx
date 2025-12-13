@@ -1,5 +1,9 @@
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  return <footer className={styles.footer}>© 2025 Football Club Explorer</footer>;
+  return (
+    <footer className={styles.footer}>
+      <p>© 2025 Football Club Explorer</p>
+    </footer>
+  );
 }

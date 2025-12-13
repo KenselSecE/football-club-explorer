@@ -1,23 +1,39 @@
 import { Club } from "@/types/club";
+import fs from "fs";
+import path from "path";
 
-async function getClubs(): Promise<Club[]> {
-  const res = await fetch("/data/clubs.json");
-  return res.json();
+function getClubs(): Club[] {
+  const filePath = path.join(process.cwd(), "public", "data", "clubs.json");
+  const file = fs.readFileSync(filePath, "utf-8");
+  const json = JSON.parse(file);
+
+  return Array.isArray(json.clubs) ? json.clubs : [];
 }
 
-export default async function ClubDetails({ params }: { params: { id: string } }) {
-  const clubs = await getClubs();
+export default function ClubDetails({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const clubs = getClubs();
   const club = clubs.find((c) => c.id === Number(params.id));
 
-  if (!club) return <p>Club not found.</p>;
+  if (!club) {
+    return <p>Club not found.</p>;
+  }
 
   return (
     <div>
       <h1>{club.name}</h1>
-      <p>Founded: {club.founded}</p>
-      <p>League: {club.league}</p>
-      <p>Country: {club.country}</p>
-      <p>Trophies: {club.trophies}</p>
+      <p>
+        <strong>League:</strong> {club.league}
+      </p>
+      <p>
+        <strong>Country:</strong> {club.country}
+      </p>
+      <p>
+        <strong>Founded:</strong> {club.founded}
+      </p>
     </div>
   );
 }

@@ -1,0 +1,36 @@
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.leagueName {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.count {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.button {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #0070f3;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  width: fit-content;
+  display: inline-block;
+}

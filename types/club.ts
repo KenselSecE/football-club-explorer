@@ -1,8 +1,8 @@
-export interface Club {
+export type Club = {
   id: number;
   name: string;
-  country: string;
   league: string;
+  country: string;
   founded: number;
-  trophies: number;
-}
+  trophies?: number;
+};

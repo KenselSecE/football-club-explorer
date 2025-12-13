@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Club } from "@/types/club";
 import ClubList from "@/components/ClubList";
 
@@ -8,16 +8,18 @@ export default function ClubsPage() {
   const [clubs, setClubs] = useState<Club[]>([]);
 
   useEffect(() => {
-    fetch("/clubs.json") // ← YA NO EXISTE /data/
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data.clubs)) {
-          setClubs(data.clubs);
-        } else {
-          console.error("Invalid JSON:", data);
-        }
-      })
-      .catch((err) => console.error(err));
+    async function loadClubs() {
+      const res = await fetch("/data/clubs.json", { cache: "no-store" });
+      const json = await res.json();
+
+      if (Array.isArray(json.clubs)) {
+        setClubs(json.clubs);
+      } else {
+        console.error("Invalid clubs.json structure:", json);
+      }
+    }
+
+    loadClubs();
   }, []);
 
   return (

@@ -9,17 +9,94 @@
     },
     {
       "id": 2,
+      "name": "Liverpool",
+      "league": "Premier League",
+      "country": "England",
+      "founded": 1892
+    },
+    {
+      "id": 3,
       "name": "Real Madrid",
       "league": "La Liga",
       "country": "Spain",
       "founded": 1902
     },
     {
-      "id": 3,
+      "id": 4,
+      "name": "Barcelona",
+      "league": "La Liga",
+      "country": "Spain",
+      "founded": 1899
+    },
+    {
+      "id": 5,
+      "name": "Bayern Munich",
+      "league": "Bundesliga",
+      "country": "Germany",
+      "founded": 1900
+    },
+    {
+      "id": 6,
+      "name": "Borussia Dortmund",
+      "league": "Bundesliga",
+      "country": "Germany",
+      "founded": 1909
+    },
+    {
+      "id": 7,
+      "name": "Juventus",
+      "league": "Serie A",
+      "country": "Italy",
+      "founded": 1897
+    },
+    {
+      "id": 8,
+      "name": "AC Milan",
+      "league": "Serie A",
+      "country": "Italy",
+      "founded": 1899
+    },
+    {
+      "id": 9,
+      "name": "Paris Saint-Germain",
+      "league": "Ligue 1",
+      "country": "France",
+      "founded": 1970
+    },
+    {
+      "id": 10,
       "name": "Boca Juniors",
       "league": "Liga Argentina",
       "country": "Argentina",
       "founded": 1905
+    },
+    {
+      "id": 11,
+      "name": "River Plate",
+      "league": "Liga Argentina",
+      "country": "Argentina",
+      "founded": 1901
+    },
+    {
+      "id": 12,
+      "name": "Flamengo",
+      "league": "Brasileirão",
+      "country": "Brazil",
+      "founded": 1895
+    },
+    {
+      "id": 13,
+      "name": "Palmeiras",
+      "league": "Brasileirão",
+      "country": "Brazil",
+      "founded": 1914
+    },
+    {
+      "id": 14,
+      "name": "Colo-Colo",
+      "league": "Liga Chile",
+      "country": "Chile",
+      "founded": 1925
     }
   ]
 }
